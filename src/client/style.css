@@ -1328,6 +1328,24 @@ label{
         height:30vh;
     }
 }
+
+.uitverkocht:before {
+    content: "UITVERKOCHT - ";
+ }
+
+ .roast-intro{
+    padding-top:10px;
+    padding-bottom:0px;
+}
+
+.roast-intro h6{
+    font-size:20px;
+    font-weight:bold;
+    color:black;
+}
+
+
+ 
 /*footer*/
 footer{
   background-color: #101010;

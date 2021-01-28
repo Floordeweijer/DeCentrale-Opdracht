@@ -92,22 +92,21 @@
         <h1>Weekend Roast</h1>
       </div>
     </div>
-    <div class="container-s page-intro-text reserveren-intro">
+    <div class="container-s page-intro-text roast-intro">
       
       <p> Met z’n tweeën op de bank hangen met een heerlijk gerecht en een goede fles wijn of met het hele gezin gezellig aan tafel het weekend vieren? 
           Wij serveren naar Engelse traditie ieder weekend een wisselende roast. Een gerecht voor minimaal 2 personen dat alleen nog even de oven in moet. 
           Zoals je van ons gewend bent maken we alles zelf met verse producten, dus bestel snel, want op = op!
       </p>
-
-      <p style="font-size:20px; font-family: Karla;"> <b> WEEKEND - 29, 30 en 31 JANUARI</b></p>
+      <h6><span class="uitverkocht"></span>WEEKEND - 29, 30 en 31 JANUARI</h6>
       <div class="image-roast roast-header"></div><br>
       <p> Procureur van de Big Green Egg met groene kool, chorizo, bruine bonen en aardappelmousseline en een jus 
       </p>
         <br>
-        <p style="font-size:20px; font-family: Karla;"> <b> BIJPASSENDE WIJN </b></p>
+        <h6>BIJPASSENDE WIJN</h6>
         <p><b>Vegamar - Dominio de Calles - D.O. Valencia         </b><br>
           Deze Crianza komt uit het plaatsje Calles; in het bergachtige gebied ten noorden van Valencia. Door de steile hellingen worden de druiven door de bergen beschermd tegen neerslag en staat de zon recht op de druiven. In de fles zit 70% aan Tempranillo, 10% Syrah, 10% Cabernet Sauvignon en 10% Merlot. Achttien maanden rijping op eikenhout geeft de wijn meer complexiteit. Vol, warm en kruidig.
-        <br><br>
+          <br><br>
         </p>
            
     </div>
@@ -116,7 +115,7 @@
       <form id="contact-form" method="post" action="/.netlify/functions/send-mail-roast" autocomplete="off">
         <div class="row">
           <div class="col-md-12">
-            <h6>WEEKEND ROAST</h6>
+            <h6><span class="uitverkocht"></span>WEEKEND ROAST </h6>
             <p>Te bestellen vanaf twee personen</p>
           </div>
         </div>
@@ -491,13 +490,42 @@
     
         <!-- DayJS -->
         <script src="/js/dayjs.min.js"></script>
-    
+
+        <!-- UITVERKOCHT -->
+        <!--  If roast is uitverkocht change to uitverkocht = true 
+              If toast is available change to uitverkocht = false -->
+        <script>
+          const uitverkocht = true
+        </script>
+
+        <!-- Hide class uitverkocht if uitverkocht=true-->
+        <script>
+          if (uitverkocht === false){
+            $('.uitverkocht').hide(); 
+          }
+        </script>
+
+        <!-- Disable dates upcoming weekend if roast is uitverkocht-->
+        <script>
+          if (uitverkocht === true){
+            const currentDate = new Date()
+            if (currentDate.getDay() === 6) {
+              DisabledDates = ['+1d','+2d','+3d','+4d','+5d']
+            } else if (currentDate.getDay() === 7) {
+              DisabledDates = ['+1d','+2d','+3d','+4d']
+            } else {
+              DisabledDates = ['+1d','+2d','+3d','+4d','+5d','+6d']}
+          }
+          else 
+            DisabledDates = ['']
+        </script>
+
         <script>
           $(document).ready(() => {
             const datepickerConfig = {
               weekStart: 1,
               daysOfWeekDisabled: '1,2,3,4',
-              datesDisabled:'',
+              datesDisabled: DisabledDates,
               autoclose: true,
               format: 'dd-mm-yyyy',
               startDate: '+0d',
@@ -522,7 +550,7 @@
                 initApiClient()
               })
           })
-        </script>
+        </script>     
       </body>
       </html>
     
