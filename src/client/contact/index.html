@@ -107,15 +107,15 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="4_gangen_standaard" class="col-sm-6">4-gangen standaard (35,00 p.p.)</label>
+      <label for="qnt_1" class="col-sm-6">4-gangen standaard (35,00 p.p.)</label>
       <div class="col-sm-6">
-          <input type="number" class="form-control small-field" name="menuStandaardVier" id="4_gangen_standaard">
+        <input type="number" class="form-control small-field" name="menuStandaardVier" id="qnt_1" value="0" data-price="35" onchange="CalculateItemsValue()">
       </div>
     </div>
     <div class="form-group row">
-      <label for="4_gangen_vega" class="col-sm-6">4-gangen vega (35,00 p.p.)</label>
+      <label for="qnt_2" class="col-sm-6">4-gangen vega (35,00 p.p.)</label>
       <div class="col-sm-6">
-          <input type="number" class="form-control small-field" name="menuVegaVier" id="4_gangen_vega">
+          <input type="number" class="form-control small-field" name="menuVegaVier" id="qnt_2"  value="0" data-price="35" onchange="CalculateItemsValue()">
       </div>
     </div>
     <hr>
@@ -126,30 +126,30 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="oesters" class="col-sm-6">Oesters (Incl. oestermes)</label>
+      <label for="qnt_3" class="col-sm-6">Oesters (Incl. oestermes)</label>
       <div class="col-sm-6">
         <div class="selectpicker">
-          <select id="oesters" name="oesters" class="form-control small-field">
-            <option selected disabled value="">Hoeveel?</option>
-            <option value="geen oesters">geen</option>
-            <option value="6-stuks">6 st. (18,00)</option>
-            <option value="12-stuks">12 st. (36,00)</option>
-            <option value="18-stuks">18 st. (54,00)</option>
-            <option value="24-stuks">24 st. (72,00)</option>
+          <select id="qnt_3" name="oesters" class="form-control small-field"  value="0" data-price="3" onchange="CalculateItemsValue()">
+            <option selected disabled value="0">Hoeveel?</option>
+            <option value="0">geen</option>
+            <option value="6">6 st. (18,00)</option>
+            <option value="12">12 st. (36,00)</option>
+            <option value="18">18 st. (54,00)</option>
+            <option value="24">24 st. (72,00)</option>
           </select>
         </div>
       </div>
     </div>
     <div class="form-group row">
-      <label for="char" class="col-sm-6">Charcuterie (7,00 per stuk)</label>
+      <label for="qnt_4" class="col-sm-6">Charcuterie (7,00 per stuk)</label>
       <div class="col-sm-6">
-          <input type="number" class="form-control small-field" name="char" id="char">
+          <input type="number" class="form-control small-field" name="char" id="qnt_4"  value="0" data-price="7" onchange="CalculateItemsValue()">
       </div>
     </div>
     <div class="form-group row">
-      <label for="kaas" class="col-sm-6">Kaasplank (10,00 per stuk)</label>
+      <label for="qnt_5" class="col-sm-6">Kaasplank (10,00 per stuk)</label>
       <div class="col-sm-6">
-          <input type="number" class="form-control small-field" name="kaas" id="kaas">
+          <input type="number" class="form-control small-field" name="kaas" id="qnt_5"  value="0" data-price="10" onchange="CalculateItemsValue()">
       </div>
     </div>
     <hr>
@@ -160,15 +160,15 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="koffie" class="col-sm-6">Miss Morrison Koffie Cups (doosje van 10 stuks voor 5,25)</label>
+      <label for="qnt_6" class="col-sm-6">Miss Morrison Koffie Cups (doosje van 10 stuks voor 5,25)</label>
       <div class="col-sm-6">
-          <input type="number" class="form-control small-field" name="koffie" id="koffie">
+          <input type="number" class="form-control small-field" name="koffie" id="qnt_6" value="0" data-price="5.25" onchange="CalculateItemsValue()">
       </div>
     </div>
     <div class="form-group row">
-      <label for="friandises" class="col-sm-6">Friandises (6,00 p.p.), 4 kleine lekkernijen voor bij de koffie</label>
+      <label for="qnt_7" class="col-sm-6">Friandises (6,00 p.p.), 4 kleine lekkernijen voor bij de koffie</label>
       <div class="col-sm-6">
-          <input type="number" class="form-control small-field" name="friandises" id="friandises">
+          <input type="number" class="form-control small-field" name="friandises" id="qnt_7" value="0" data-price="6" onchange="CalculateItemsValue()">
       </div>
     </div>
     <hr>
@@ -181,12 +181,12 @@
     </div>
     <br>
     <div class="form-group row">
-      <label for="wijnpakket" class="col-sm-6">Bijpassend wijnpakket</label>
+      <label for="qnt_8" class="col-sm-6">Bijpassend wijnpakket</label>
       <div class="col-sm-6">
         <div class="selectpicker">
-          <select id="wijnpakket" name="wijnpakket" class="form-control middle-field">
-            <option selected disabled value="">Hoeveel flessen?</option>
-            <option value="geen">geen</option>
+          <select id="qnt_8" name="wijnpakket" class="form-control middle-field" value="0" data-price="15" onchange="CalculateItemsValue()">
+            <option selected disabled value="0">Hoeveel flessen?</option>
+            <option value="0">geen</option>
             <option value="2">2 flessen (30,00)</option>
             <option value="3">3 flessen (45,00)</option>
             <option value="4">4 flessen (60,00)</option>
@@ -197,24 +197,24 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
-          <input type="checkbox" id="bijpassend_wit" name="wijn_wit">
-          <label for="bijpassend_wit"> Bijpassend wit (17,50)</label>
+          <input type="checkbox" name="wijn_wit" id="qnt_10" data-price="17.5" onchange="CalculateItemsValue()">
+          <label for="qnt_10"> Bijpassend wit (17,50)</label>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="bijpassend_rood" name="wijn_rood">
-          <label for="bijpassend_rood"> Bijpassend rood (17,50)</label>
+          <input type="checkbox" name="wijn_rood" id="qnt_11" data-price="17.5" onchange="CalculateItemsValue()">
+          <label for="qnt_11"> Bijpassend rood (17,50)</label>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="bijpassend_cava" name="wijn_cava">
-          <label for="bijpassend_cava"> Cava - Clos Montblanc - Brut Silver (20,00)</label>
+          <input type="checkbox" name="wijn_cava" id="qnt_12" data-price="20" onchange="CalculateItemsValue()">
+          <label for="qnt_12"> Cava - Clos Montblanc - Brut Silver (20,00)</label>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="klein_cava" name="wijn_cava_klein">
-          <label for="bijpassend_cava_klein"> Cava voor 2 personen (12,00)</label>
+          <input type="checkbox" name="wijn_cava_klein" id="qnt_13" data-price="12" onchange="CalculateItemsValue()">
+          <label for="qnt_13"> Cava voor 2 personen (12,00)</label>
         </div>
         <div class="form-group">
-          <input type="checkbox" id="bijpassend_speciaal" name="bubbel">
-          <label for="bijpassend_speciaal">Bubbel<a href="https://www.alain-voge.com/en/saint-peray/les-bulles-d-alain" target="_blank">Rhône Cremant:  Bulles d’Alain – A.O.P. Saint-Péray – 2014 (bio)</a>(40,00)</label>
+          <input type="checkbox" name="bubbel" id="qnt_14" data-price="40" onchange="CalculateItemsValue()">
+          <label for="qnt_14">Bubbel<a href="https://www.alain-voge.com/en/saint-peray/les-bulles-d-alain" target="_blank">Rhône Cremant:  Bulles d’Alain – A.O.P. Saint-Péray – 2014 (bio)</a>(40,00)</label>
         </div>
       </div>
     </div>
@@ -330,12 +330,12 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="cadeaubon" class="col-sm-6">Cadeaubon</label>
+      <label for="qnt_9" class="col-sm-6">Cadeaubon</label>
       <div class="col-sm-6">
         <div class="selectpicker">
-          <select id="cadeaubon" name="cadeaubon" class="form-control small-field">
-            <option selected disabled value="">Hoeveel?</option>
-            <option value="geen">geen</option>
+          <select id="qnt_9" name="cadeaubon" class="form-control small-field" value="0" data-price="1" onchange="CalculateItemsValue()">
+            <option selected disabled value="0">Hoeveel?</option>
+            <option value="0">geen</option>
             <option value="25">25 euro</option>
             <option value="50">50 euro</option>
             <option value="75">75 euro</option>
@@ -352,7 +352,10 @@
           <label for="nieuwsbrief"> Ja, ik blijf graag via e-mail op de hoogte van de Centrale.</label>
         </div>
       </div>
-    </div>          
+    </div> 
+    <hr>
+    <h6> Totaalbedrag van je bestelling: <span id="ItemsTotal">€0</span></h6>
+    <p><br>Bij afhalen kan je pinnen, bij bezorgen ontvang je een tikkie.</p>          
     <label class="honing" tabindex="-1" aria-hidden="true">
     <input type="text" name="petsName"></label>
     <button type="submit" class="btn-form">VERSTUUR</button>
@@ -387,6 +390,32 @@
 
 </footer>
 
+    <script>
+      /**
+       * Calculate total price of chosen products
+       */ 
+        var total_items = 14;
+      function CalculateItemsValue() {
+        var total = 0;
+        // for each item:
+        for (i=1; i<=total_items; i++) {
+            itemID = document.getElementById("qnt_"+i);
+            // if checkbox is checked add price to total
+            if (itemID.checked == true) {
+                total = total + 1 * parseFloat(itemID.getAttribute("data-price"));
+                console.log(total)
+            // if input is empty or NaN ignore
+            } else if (isNaN(itemID.value) || itemID.value=="") {
+                total = total;
+            // add value times price to total
+            } else {
+                total = total + parseFloat(itemID.value) * parseFloat(itemID.getAttribute("data-price"));
+            }         
+        }
+        document.getElementById("ItemsTotal").innerHTML = "€" + total;
+      }
+    </script>
+  
     <script>
       /**
        * initialize Google Calendar API using our config.
