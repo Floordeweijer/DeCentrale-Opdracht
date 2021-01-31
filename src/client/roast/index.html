@@ -493,12 +493,12 @@
 
         <!-- UITVERKOCHT -->
         <!--  If roast is uitverkocht change to uitverkocht = true 
-              If toast is available change to uitverkocht = false -->
+              If roast is available change to uitverkocht = false -->
         <script>
           const uitverkocht = true
         </script>
 
-        <!-- Hide class uitverkocht if uitverkocht=true-->
+        <!-- Hide class uitverkocht if uitverkocht= false-->
         <script>
           if (uitverkocht === false){
             $('.uitverkocht').hide(); 
@@ -509,15 +509,18 @@
         <script>
           if (uitverkocht === true){
             const currentDate = new Date()
+            // on saturday disable saturday and sunday
             if (currentDate.getDay() === 6) {
-              DisabledDates = ['+1d','+2d','+3d','+4d','+5d']
-            } else if (currentDate.getDay() === 7) {
-              DisabledDates = ['+1d','+2d','+3d','+4d']
+              disabledDates = ['+0d','+1d']
+            // on sunday disable for sunday
+            } else if (currentDate.getDay() === 0) {
+              disabledDates = ['+0d']
+            // on all other days disable all upcoming 6 days.
             } else {
-              DisabledDates = ['+1d','+2d','+3d','+4d','+5d','+6d']}
+              disabledDates = ['+1d','+2d','+3d','+4d','+5d','+6d']}
           }
           else 
-            DisabledDates = ['']
+            disabledDates = ['']
         </script>
 
         <script>
@@ -525,7 +528,7 @@
             const datepickerConfig = {
               weekStart: 1,
               daysOfWeekDisabled: '1,2,3,4',
-              datesDisabled: DisabledDates,
+              datesDisabled: disabledDates,
               autoclose: true,
               format: 'dd-mm-yyyy',
               startDate: '+0d',
